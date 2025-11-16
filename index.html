@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Invoice Processing ROI Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main class="page">
+    <h1>AI Invoice Processing ROI Simulator</h1>
+
+    <section class="card parameters">
+      <div class="card-header">
+        <div>
+
+
+          <p class="muted">Adjust the parameters below to understand how automation can change your annual invoice
+            processing economics.</p>
+          <p>
+
+          </p>
+          <div class="parameter-grid">
+            <div class="field">
+              <label for="monthlyVolume">Monthly invoice volume</label>
+              <input class="param-input" id="monthlyVolume" type="number" min="0" step="50" />
+              <span class="tooltip">Invoices processed each month.</span>
+            </div>
+            <div class="field">
+              <label for="manualMinutes">Manual processing time</label>
+              <input class="param-input" id="manualMinutes" type="number" min="1" max="120" step="1" />
+              <span class="tooltip">Typically 15-20 minutes manually per invoice.</span>
+            </div>
+            <div class="field">
+              <label for="hourlyCost">Staff cost per hour</label>
+              <input class="param-input" id="hourlyCost" type="number" min="0" step="5" />
+              <span class="tooltip">Full hourly rate of AP team.</span>
+            </div>
+            <div class="field">
+              <label for="averageInvoiceValue">Average invoice value</label>
+              <input class="param-input" id="averageInvoiceValue" type="number" min="0" step="500" />
+              <span class="tooltip">Average net amount per invoice.</span>
+            </div>
+            <div class="field">
+              <label for="errorRate">Manual error rate (%)</label>
+              <input class="param-input" id="errorRate" type="number" min="0" max="100" step="0.1" />
+              <span class="tooltip">Share of invoices impacted by errors.</span>
+            </div>
+
+            <div class="field">
+              <label for="auditCost">Audit &amp; compliance cost</label>
+              <input class="param-input" id="auditCost" type="number" min="0" step="1000" />
+              <span class="tooltip">Annual external review &amp; remediation spend.</span>
+            </div>
+            <div class="field">
+              <label for="aiPlatformCost">AI platform annual cost</label>
+              <input class="param-input" id="aiPlatformCost" type="number" min="0" step="1000" />
+              <span class="tooltip">SaaS subscription or license.</span>
+            </div>
+            <div class="field">
+              <label for="aiImplementationCost">AI Implementation cost</label>
+              <input class="param-input" id="aiImplementationCost" type="number" min="0" step="1000" />
+              <span class="tooltip">Initial setup cost.</span>
+            </div>
+          </div>
+    </section>
+
+    <section class="cards-columns">
+      <article class="card cost-card">
+        <h2>Current Process Costs</h2>
+        <ul class="cost-breakdown">
+          <li><span>Labor</span><span id="currentLabor">€0</span></li>
+          <li><span>Audit &amp; compliance</span><span id="currentAudit">€0</span></li>
+        </ul>
+        <div class="total-row">
+          <span class="total-label">Total annual cost</span>
+          <span class="total-value" id="currentTotal">€0</span>
+        </div>
+      </article>
+
+      <article class="card cost-card">
+        <h2>Costs with AI</h2>
+        <ul class="cost-breakdown">
+          <li><span>Labor</span><span id="aiLabor">€0</span></li>
+          <li><span>Audit &amp; compliance</span><span id="aiAudit">€0</span></li>
+          <li><span>Platform cost</span><span id="aiPlatform">€0</span></li>
+          <li><span>Implementation</span><span id="aiImplementation">€0</span></li>
+        </ul>
+        <div class="total-row">
+          <span class="total-label">Total annual cost</span>
+          <span class="total-value" id="aiTotal">€0</span>
+        </div>
+      </article>
+    </section>
+
+    <section class="card results">
+      <div class="results-row">
+        <div class="result-item">
+          <p class="label">Annual savings</p>
+          <p class="value" id="annualSavings">€0</p>
+        </div>
+        <div class="result-item">
+          <p class="label">ROI</p>
+          <p class="value" id="roiPercent">0%</p>
+        </div>
+        <div class="result-item">
+          <p class="label">Payback period</p>
+          <p class="value" id="payback">—</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
