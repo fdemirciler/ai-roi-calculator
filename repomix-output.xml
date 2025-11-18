@@ -1,0 +1,621 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+index.html
+README.md
+script.js
+styles.css
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="index.html">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Invoice Processing ROI Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main class="page">
+    <h1>AI Invoice Processing ROI Simulator</h1>
+
+    <section class="card parameters">
+      <div class="card-header">
+        <div>
+
+
+          <p class="muted">Adjust the parameters below to understand how automation can change your annual invoice
+            processing economics.</p>
+          <p>
+
+          </p>
+          <div class="parameter-grid">
+            <div class="field">
+              <label for="monthlyVolume">Monthly invoice volume</label>
+              <input class="param-input" id="monthlyVolume" type="number" min="0" step="50" />
+              <span class="tooltip">Invoices processed each month.</span>
+            </div>
+            <div class="field">
+              <label for="manualMinutes">Manual processing time</label>
+              <input class="param-input" id="manualMinutes" type="number" min="1" max="120" step="1" />
+              <span class="tooltip">Typically 15-20 minutes manually per invoice.</span>
+            </div>
+            <div class="field">
+              <label for="hourlyCost">Staff cost per hour</label>
+              <input class="param-input" id="hourlyCost" type="number" min="0" step="5" />
+              <span class="tooltip">Full hourly rate of AP team.</span>
+            </div>
+            <div class="field">
+              <label for="averageInvoiceValue">Average invoice value</label>
+              <input class="param-input" id="averageInvoiceValue" type="number" min="0" step="500" />
+              <span class="tooltip">Average net amount per invoice.</span>
+            </div>
+            <div class="field">
+              <label for="errorRate">Manual error rate (%)</label>
+              <input class="param-input" id="errorRate" type="number" min="0" max="100" step="0.1" />
+              <span class="tooltip">Share of invoices impacted by errors.</span>
+            </div>
+
+            <div class="field">
+              <label for="auditCost">Audit &amp; compliance cost</label>
+              <input class="param-input" id="auditCost" type="number" min="0" step="1000" />
+              <span class="tooltip">Annual external review &amp; remediation spend.</span>
+            </div>
+            <div class="field">
+              <label for="aiPlatformCost">AI platform annual cost</label>
+              <input class="param-input" id="aiPlatformCost" type="number" min="0" step="1000" />
+              <span class="tooltip">SaaS subscription or license.</span>
+            </div>
+            <div class="field">
+              <label for="aiImplementationCost">AI Implementation cost</label>
+              <input class="param-input" id="aiImplementationCost" type="number" min="0" step="1000" />
+              <span class="tooltip">Initial setup cost.</span>
+            </div>
+          </div>
+    </section>
+
+    <section class="cards-columns">
+      <article class="card cost-card">
+        <h2>Current Process Costs</h2>
+        <ul class="cost-breakdown">
+          <li><span>Labor</span><span id="currentLabor">€0</span></li>
+          <li><span>Audit &amp; compliance</span><span id="currentAudit">€0</span></li>
+        </ul>
+        <div class="total-row">
+          <span class="total-label">Total annual cost</span>
+          <span class="total-value" id="currentTotal">€0</span>
+        </div>
+      </article>
+
+      <article class="card cost-card">
+        <h2>Costs with AI</h2>
+        <ul class="cost-breakdown">
+          <li><span>Labor</span><span id="aiLabor">€0</span></li>
+          <li><span>Audit &amp; compliance</span><span id="aiAudit">€0</span></li>
+          <li><span>Platform cost</span><span id="aiPlatform">€0</span></li>
+          <li><span>Implementation</span><span id="aiImplementation">€0</span></li>
+        </ul>
+        <div class="total-row">
+          <span class="total-label">Total annual cost</span>
+          <span class="total-value" id="aiTotal">€0</span>
+        </div>
+      </article>
+    </section>
+
+    <section class="card results">
+      <div class="results-row">
+        <div class="result-item">
+          <p class="label">Annual savings</p>
+          <p class="value" id="annualSavings">€0</p>
+        </div>
+        <div class="result-item">
+          <p class="label">ROI</p>
+          <p class="value" id="roiPercent">0%</p>
+        </div>
+        <div class="result-item">
+          <p class="label">Payback period</p>
+          <p class="value" id="payback">—</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
+</file>
+
+<file path="script.js">
+'use strict';
+
+const defaults = {
+  monthlyVolume: 1000,
+  manualMinutes: 10,
+  hourlyCost: 40,
+  errorRate: 2,
+  averageInvoiceValue: 5000,
+  auditCost: 20000,
+  aiPlatformCost: 5000,
+  aiImplementationCost: 15000
+};
+
+const AI_PROCESSING_SECONDS = 15; // assumed automation speed
+const AI_ERROR_RATE = 0.1; // assumed residual error %
+const AI_AUDIT_FACTOR = 0.1;
+
+const euroFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'EUR',
+  maximumFractionDigits: 0
+});
+
+function initCalculator() {
+  Object.entries(defaults).forEach(([key, value]) => {
+    const input = document.getElementById(key);
+    if (input) {
+      input.value = value;
+    }
+  });
+
+  document.querySelectorAll('.param-input').forEach((input) => {
+    input.addEventListener('input', recalculate);
+  });
+
+  recalculate();
+}
+
+function readParams() {
+  const params = {};
+  Object.keys(defaults).forEach((key) => {
+    const element = document.getElementById(key);
+    const value = element ? parseFloat(element.value) : 0;
+    params[key] = Number.isFinite(value) ? value : 0;
+  });
+  return params;
+}
+
+function computeResults(params) {
+  const annualInvoices = params.monthlyVolume * 12;
+  const manualHours = annualInvoices * (params.manualMinutes / 60);
+  const laborCost = manualHours * params.hourlyCost;
+  const auditCost = params.auditCost;
+
+  const currentTotal = laborCost + auditCost;
+
+  const aiLabor = annualInvoices * (AI_PROCESSING_SECONDS / 3600) * params.hourlyCost;
+  const safeManualErrorRate = Math.max(params.errorRate, 0.1);
+  const aiErrorRatio = AI_ERROR_RATE / safeManualErrorRate;
+  const aiAuditCost = auditCost * AI_AUDIT_FACTOR;
+
+  const aiTotal = aiLabor + aiAuditCost + params.aiPlatformCost + params.aiImplementationCost;
+
+  const annualSavings = currentTotal - aiTotal;
+  const roiPercent = aiTotal > 0 ? (annualSavings / aiTotal) * 100 : 0;
+  const monthlySavings = annualSavings / 12;
+  const paybackMonths = monthlySavings > 0 ? (params.aiPlatformCost + params.aiImplementationCost) / monthlySavings : null;
+
+  return {
+    current: {
+      laborCost,
+      auditCost,
+      total: currentTotal
+    },
+    ai: {
+      laborCost: aiLabor,
+      auditCost: aiAuditCost,
+      platformCost: params.aiPlatformCost,
+      implementationCost: params.aiImplementationCost,
+      total: aiTotal
+    },
+    roi: {
+      annualSavings,
+      roiPercent,
+      paybackMonths
+    }
+  };
+}
+
+function updateCurrency(id, value) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.textContent = euroFormatter.format(Math.round(value));
+  }
+}
+
+function recalculate() {
+  const params = readParams();
+  const results = computeResults(params);
+
+  updateCurrency('currentLabor', results.current.laborCost);
+  updateCurrency('currentAudit', results.current.auditCost);
+  updateCurrency('currentTotal', results.current.total);
+
+  updateCurrency('aiLabor', results.ai.laborCost);
+  updateCurrency('aiAudit', results.ai.auditCost);
+  updateCurrency('aiPlatform', results.ai.platformCost);
+  updateCurrency('aiImplementation', results.ai.implementationCost);
+  updateCurrency('aiTotal', results.ai.total);
+
+  const annualHeadline = document.getElementById('annualSavings');
+  if (annualHeadline) {
+    annualHeadline.textContent = `${euroFormatter.format(Math.round(results.roi.annualSavings))}`;
+  }
+
+  const roiEl = document.getElementById('roiPercent');
+  if (roiEl) {
+    const rounded = results.roi.roiPercent;
+    roiEl.textContent = `${rounded.toFixed(1)}%`;
+  }
+
+  const paybackEl = document.getElementById('payback');
+  if (paybackEl) {
+    paybackEl.textContent = results.roi.paybackMonths
+      ? `${results.roi.paybackMonths.toFixed(1)} months`
+      : 'Not reached';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', initCalculator);
+</file>
+
+<file path="styles.css">
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #f4f6fb;
+  --surface: #ffffff;
+  --text: #101828;
+  --muted: #667085;
+  --primary: #4c5fd5;
+  --accent: #7c3aed;
+  --border: #e4e7ec;
+  --input-bg: #f9f9ff;
+  --shadow-card: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+main.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: 26px;
+  padding: 2rem;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .card-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0;
+}
+
+h1 {
+  margin: 0.25rem 0 0.4rem;
+  text-align: center;
+  color: var(--primary);
+}
+
+h2 {
+  margin: 0.25rem 0 0.4rem;
+}
+
+.muted {
+  margin: 0;
+  color: var(--muted);
+}
+
+.pill {
+  align-self: flex-start;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  background: rgba(76, 95, 213, 0.12);
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.parameters {
+  overflow: hidden;
+}
+
+.parameters .parameter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(190px, 1fr));
+  gap: 1rem;
+  margin-right: -2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  position: relative;
+}
+
+.field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+
+.field input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 0.7rem 0.85rem;
+  font-size: 0.95rem;
+  background: var(--input-bg);
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(76, 95, 213, 0.22);
+  background: #fff;
+}
+
+.tooltip {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.9rem);
+  background: var(--bg);
+  color: var(--text);
+  padding: 0.5rem 0.7rem;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  max-width: 220px;
+  z-index: 5;
+}
+
+.field .param-input:hover+.tooltip,
+.field .param-input:focus+.tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.cards-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.cards-columns .card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.cost-breakdown {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex-grow: 1;
+}
+
+.cost-breakdown li {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+.cost-breakdown span:last-child {
+  color: var(--text);
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.total-label {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.total-value {
+  font-size: 1.45rem;
+  font-weight: 700;
+}
+
+.card.results {
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.results-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.result-item {
+  flex: 1;
+  min-width: 190px;
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: linear-gradient(135deg, rgba(76, 95, 213, 0.08), rgba(124, 58, 237, 0.08));
+}
+
+.result-item .label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  margin-bottom: 0.4rem;
+  color: var(--muted);
+}
+
+.result-item .value {
+  margin: 0;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.footnote {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 1.5rem;
+  }
+
+  .parameters .parameter-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</file>
+
+<file path="README.md">
+# AI Invoice Processing ROI Calculator
+
+## Overview
+
+The AI Invoice Processing ROI Calculator is an interactive web application that helps businesses understand the financial impact of automating their invoice processing workflows. It compares the costs of manual invoice processing against an AI-powered solution, providing clear metrics on savings, return on investment (ROI), and payback period.
+
+## How the Calculation Works
+
+The calculator compares two scenarios: **Current Process** vs. **With AI**.
+
+### Current Process Costs
+- **Labor Cost:** Calculated as: `(Monthly Volume × 12 months) × (Manual Processing Time / 60 minutes) × Hourly Staff Cost`
+- **Audit & Compliance Cost:** Annual external review and remediation spend
+
+### With AI Costs
+- **Labor Cost:** Dramatically reduced, calculated as: `Annual Invoices × (15 seconds / 3600) × Hourly Staff Cost` (assumes 15-second AI processing time)
+- **Audit & Compliance Cost:** Reduced to 10% of current audit costs (due to lower error rates from AI)
+- **Platform Cost:** Annual SaaS subscription or license fee
+- **Implementation Cost:** One-time initial setup cost
+
+### ROI Metrics
+- **Annual Savings:** Difference between current total costs and AI total costs
+- **ROI %:** `(Annual Savings / AI Total Cost) × 100`
+- **Payback Period:** Months to recover implementation and platform costs from monthly savings
+
+### Key Assumptions
+- AI processes invoices at 15 seconds per invoice (vs. manual time of 15-20 minutes)
+- AI reduces error rates to 10% of manual error rates
+- AI solutions reduce audit costs to 10% of current levels
+
+## Automate Invoice Processing
+
+To implement AI-powered invoice processing, visit: **https://ai-invoice-scan.web.app/**
+
+This platform can be used to automate your invoice processing workflow end-to-end.
+
+## Customizing the Model
+
+- **Defaults:** Update the `defaults` object in `script.js` to match your baseline data (volume, labor rate, audit spend, platform costs).
+- **Assumptions:** Modify constants at the top of `script.js` such as `AI_PROCESSING_SECONDS`, `AI_ERROR_RATE`, or `AI_AUDIT_FACTOR`.
+- **Tooltips:** Change the helper copy next to each parameter in `index.html` or adjust positioning via the `.tooltip` styles.
+</file>
+
+</files>
