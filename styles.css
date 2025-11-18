@@ -169,16 +169,16 @@ h2 {
   /* Robust fill for the cards */
 }
 
-.cost-card {
+/* .cost-card {
   display: flex;
   flex-direction: column;
   height: 100%;
   /* Stretches the card to fill its container */
-  justify-content: space-between;
-  /* Pushes the Total row to the bottom */
-}
+justify-content: space-between;
+/* Pushes the Total row to the bottom */
 
-.cost-breakdown {
+
+*/ .cost-breakdown {
   list-style: none;
   margin: 0;
   padding: 0;
