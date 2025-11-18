@@ -155,12 +155,18 @@ h2 {
 }
 
 /* Cost Cards Section */
+
 .cards-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
-  /* CRITICAL: Allows this section to grow and fill empty vertical space */
-  flex: 1;
+  align-items: stretch;
+  /* Fix: ensure children stretch fully */
+}
+
+.cards-columns>.cost-card {
+  height: 100%;
+  /* Robust fill for the cards */
 }
 
 .cost-card {
