@@ -100,6 +100,38 @@ h2 {
   transition: all 0.2s ease;
 }
 
+.input-with-format {
+  position: relative;
+  width: 100%;
+}
+
+.formatted-number {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  caret-color: transparent;
+}
+
+.formatted-number.show-caret {
+  caret-color: var(--text);
+}
+
+.formatted-number::placeholder {
+  color: transparent;
+}
+
+.input-formatted {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  padding: 0 0.6rem;
+  padding-right: 2.5rem;
+  font-size: 0.8rem;
+  font-family: inherit;
+  color: var(--text);
+}
+
 .field input:focus {
   outline: none;
   border-color: var(--primary);

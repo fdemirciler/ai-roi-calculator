@@ -11,6 +11,14 @@ const defaults = {
   aiImplementationCost: 15000
 };
 
+const formattedFieldIds = new Set([
+  'monthlyVolume',
+  'averageInvoiceValue',
+  'auditCost',
+  'aiPlatformCost',
+  'aiImplementationCost'
+]);
+
 const AI_PROCESSING_SECONDS = 15; // assumed automation speed
 const AI_ERROR_RATE = 0.1; // assumed residual error %
 const AI_AUDIT_FACTOR = 0.1;
@@ -29,8 +37,19 @@ function initCalculator() {
     }
   });
 
-  document.querySelectorAll('.param-input').forEach((input) => {
-    input.addEventListener('input', recalculate);
+  const paramInputs = document.querySelectorAll('.param-input');
+  paramInputs.forEach((input) => {
+    const usesFormatting = formattedFieldIds.has(input.id);
+    if (usesFormatting) {
+      updateFormattedInput(input);
+      enhanceFormattedInput(input);
+    }
+    input.addEventListener('input', () => {
+      if (usesFormatting) {
+        updateFormattedInput(input);
+      }
+      recalculate();
+    });
   });
 
   recalculate();
@@ -92,6 +111,49 @@ function updateCurrency(id, value) {
   if (el) {
     el.textContent = euroFormatter.format(Math.round(value));
   }
+}
+
+function formatWithSeparators(value) {
+  if (value === '' || value === undefined || value === null) {
+    return '';
+  }
+  const numericValue = Number(value);
+  if (!Number.isFinite(numericValue)) {
+    return '';
+  }
+  if (value.includes('.')) {
+    const decimals = value.split('.')[1].length;
+    return numericValue.toLocaleString('en-US', {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals
+    });
+  }
+  return numericValue.toLocaleString('en-US');
+}
+
+function updateFormattedInput(input) {
+  const wrapper = input.closest('.input-with-format');
+  if (!wrapper) {
+    return;
+  }
+  const display = wrapper.querySelector('.input-formatted');
+  if (!display) {
+    return;
+  }
+  display.textContent = formatWithSeparators(input.value);
+}
+
+function enhanceFormattedInput(input) {
+  const hideCaret = () => {
+    input.classList.remove('show-caret');
+  };
+  input.addEventListener('blur', hideCaret);
+  input.addEventListener('pointerdown', hideCaret);
+  input.addEventListener('mousedown', hideCaret);
+  input.addEventListener('keydown', () => {
+    input.classList.add('show-caret');
+  });
+  hideCaret();
 }
 
 function recalculate() {

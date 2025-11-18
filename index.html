@@ -25,7 +25,10 @@
           <div class="parameter-grid">
             <div class="field">
               <label for="monthlyVolume">Monthly invoice volume</label>
-              <input class="param-input" id="monthlyVolume" type="number" min="0" step="50" />
+              <div class="input-with-format">
+                <input class="param-input formatted-number" data-formatted="true" id="monthlyVolume" type="number" min="0" step="50" />
+                <span class="input-formatted" aria-hidden="true"></span>
+              </div>
               <span class="tooltip">Invoices processed each month.</span>
             </div>
             <div class="field">
@@ -40,7 +43,10 @@
             </div>
             <div class="field">
               <label for="averageInvoiceValue">Average invoice value</label>
-              <input class="param-input" id="averageInvoiceValue" type="number" min="0" step="500" />
+              <div class="input-with-format">
+                <input class="param-input formatted-number" data-formatted="true" id="averageInvoiceValue" type="number" min="0" step="500" />
+                <span class="input-formatted" aria-hidden="true"></span>
+              </div>
               <span class="tooltip">Average net amount per invoice.</span>
             </div>
             <div class="field">
@@ -51,17 +57,26 @@
 
             <div class="field">
               <label for="auditCost">Audit &amp; compliance cost</label>
-              <input class="param-input" id="auditCost" type="number" min="0" step="1000" />
+              <div class="input-with-format">
+                <input class="param-input formatted-number" data-formatted="true" id="auditCost" type="number" min="0" step="1000" />
+                <span class="input-formatted" aria-hidden="true"></span>
+              </div>
               <span class="tooltip">Annual external review &amp; remediation spend.</span>
             </div>
             <div class="field">
               <label for="aiPlatformCost">AI platform annual cost</label>
-              <input class="param-input" id="aiPlatformCost" type="number" min="0" step="1000" />
+              <div class="input-with-format">
+                <input class="param-input formatted-number" data-formatted="true" id="aiPlatformCost" type="number" min="0" step="1000" />
+                <span class="input-formatted" aria-hidden="true"></span>
+              </div>
               <span class="tooltip">SaaS subscription or license.</span>
             </div>
             <div class="field">
               <label for="aiImplementationCost">AI Implementation cost</label>
-              <input class="param-input" id="aiImplementationCost" type="number" min="0" step="1000" />
+              <div class="input-with-format">
+                <input class="param-input formatted-number" data-formatted="true" id="aiImplementationCost" type="number" min="0" step="1000" />
+                <span class="input-formatted" aria-hidden="true"></span>
+              </div>
               <span class="tooltip">Initial setup cost.</span>
             </div>
           </div>
