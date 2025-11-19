@@ -16,7 +16,7 @@
 
 html,
 body {
-  height: 100%;
+  height: 100vh;
 }
 
 body {
@@ -26,21 +26,20 @@ body {
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 main.page {
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
-  /* Use viewport units for vertical padding to add breathing room */
-  padding: 3vh 2rem;
-  /* Force the container to fill the screen height */
-  min-height: 100vh;
+  padding: 2rem 2rem;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  /* Distribute sections vertically: Header top, Footer bottom, Content fills middle */
-  /* justify-content: space-between; */
   gap: 1.5rem;
+  overflow-y: auto;
 }
 
 h1 {
